@@ -1,3 +1,9 @@
+/* By BUBA 
+    __
+___( o)>
+\ <_. )
+ `---' 
+*/
 // Definizione dei pin collegati ai LED del primo semaforo
 const int PinRed_1 = 6;     
 const int PinYellow_1 = 5;  
