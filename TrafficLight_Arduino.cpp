@@ -4,61 +4,49 @@
     \ <_. )
     `---' 
 */
-
-// Definizione dei pin per i LED del primo semaforo
-int LedRosso_1 = 6;    
-int LedGiallo_1 = 5;   
-int LedVerde_1 = 4;   
+//Definizione dei pin per i LED del primo semaforo
+int LedRosso_1 = 13;    // Semaforo 1 - LED rosso
+int LedGiallo_1 = 12;   // Semaforo 1 - LED giallo
+int LedVerde_1 = 11;    // Semaforo 1 - LED verde
 
 // Definizione dei pin per i LED del secondo semaforo
-int LedRosso_2 = 3;    
-int LedGiallo_2 = 2;   
-int LedVerde_2 = 1;    
+int LedRosso_2 = 7;    // Semaforo 2 - LED rosso
+int LedGiallo_2 = 6;   // Semaforo 2 - LED giallo
+int LedVerde_2 = 5;    // Semaforo 2 - LED verde
 
 void setup() 
 {
-  // Imposta i pin dei LED come uscite
+  // Imposta i pin associati ai LED come uscite per poterli accendere o spegnere
   pinMode(LedRosso_1, OUTPUT);   
-  pinMode(LedGiallo_1, OUTPUT);   
+  pinMode(LedGiallo_1, OUTPUT);  
   pinMode(LedVerde_1, OUTPUT);   
   
   pinMode(LedRosso_2, OUTPUT);   
   pinMode(LedGiallo_2, OUTPUT);  
-  pinMode(LedVerde_2, OUTPUT);    
+  pinMode(LedVerde_2, OUTPUT);   
 }
 
 void loop() 
 {
-  // accende il LED Rosso 1 e il LED Verde 2
-  digitalWrite(LedRosso_1, HIGH);  // accende il LED Rosso 1
-  digitalWrite(LedVerde_2, HIGH);  // accende il LED Verde 2
-  delay(2000);                     // accende 2 secondi
+  digitalWrite(LedRosso_1, HIGH);  // accende rosso - Semaforo 1
+  digitalWrite(LedVerde_2, HIGH);  // accende verde - Semaforo 2
+  delay(4000);                     // aspetta 4 secondi
   
-  // Spegne il LED Rosso 2 e accende il LED Verde 2
-  digitalWrite(LedRosso_2, LOW);   // spegne LED Rosso 2
-  digitalWrite(LedVerde_2, HIGH);  // mantiene acceso il LED Verde 2
-  delay(3000);                     // aspetta 3 secondi
-  
-  // accende il LED Giallo 2
-  digitalWrite(LedGiallo_2, HIGH); // accende il LED Giallo 2
+  digitalWrite(LedGiallo_2, HIGH); // accende giallo - Semaforo 2
   delay(2000);                     // aspetta 2 secondi
   
-  // spegne i LED Verde e Giallo 2 e accende il LED Rosso 2
-  digitalWrite(LedVerde_2, LOW);   // spegne il LED Verde 2
-  digitalWrite(LedGiallo_2, LOW);  // spegne il LED Giallo 2
-  digitalWrite(LedRosso_2, HIGH);  // accende il LED Rosso 2
-  delay(2000);                     // aspetta 2 secondi
+  digitalWrite(LedVerde_2, LOW);   // spegne verde - Semaforo 2
+  digitalWrite(LedGiallo_2, LOW);  // spegne giallo - Semaforo 2
+  digitalWrite(LedRosso_1, LOW);   // spegne rosso - Semaforo 1
   
-  // spegne il LED Rosso 1 e accende il LED Verde 1
-  digitalWrite(LedRosso_1, LOW);   // spegne il LED Rosso 1
-  digitalWrite(LedVerde_1, HIGH);  // accende LED Verde 1
-  delay(3000);                     // aspetta 3 secondi
+  digitalWrite(LedRosso_2, HIGH);  // accende rosso - Semaforo 2
+  digitalWrite(LedVerde_1, HIGH);  // accende verde - Semaforo 1
+  delay(4000);                     // aspetta 4 secondi
   
-  // accende il LED Giallo 1
-  digitalWrite(LedGiallo_1, HIGH); // accende il  LED Giallo 1
-  delay(2000);                     // aspetta 2 secondi
+  digitalWrite(LedGiallo_1, HIGH); // accende giallo - Semaforo 1
+  delay(2000);                     // Attesa 2 secondi
   
-  // spegne i LED Verde e Giallo 1
-  digitalWrite(LedVerde_1, LOW);   // spegne il LED Verde 1
-  digitalWrite(LedGiallo_1, LOW);  // spegne il LED Giallo 1
+  digitalWrite(LedGiallo_1, LOW);  // spegne giallo - Semaforo 1
+  digitalWrite(LedVerde_1, LOW);   // spegne verde - Semaforo 1
+  digitalWrite(LedRosso_2, LOW);   // spegne rosso - Semaforo 2
 }
